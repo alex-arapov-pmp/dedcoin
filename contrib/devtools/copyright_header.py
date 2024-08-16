@@ -82,7 +82,7 @@ def compile_copyright_regex(copyright_style, year_style, name):
     return re.compile('%s %s %s' % (copyright_style, year_style, name))
 
 EXPECTED_HOLDER_NAMES = [
-    "Satoshi Nakamoto\n",
+    "Sa_toshikamoto\n",
     "The Bitcoin Core developers\n",
     "The Bitcoin Core developers \n",
     "Bitcoin Core Developers\n",
@@ -105,6 +105,7 @@ EXPECTED_HOLDER_NAMES = [
     "Jan-Klaas Kollhof\n",
     "Sam Rushing\n",
     "ArtForz -- public domain half-a-node\n",
+    "Alex Arapov\n",
 ]
 
 DOMINANT_STYLE_COMPILED = {}

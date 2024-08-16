@@ -8,7 +8,7 @@ specifically help the introduction of performance updates or other lower-level
 improvements where positive and/or negative effects may take a longer time to
 test. The PR benefits from being merged because this makes it easier for
 testers to pick and choose sets of features to experiment with in their custom
-built Dogecoin Core deployments.
+built Dedcoin Core deployments.
 
 ## Enabling experimental features
 
@@ -17,24 +17,24 @@ experimental feature to `./configure`:
 
 ### Current experiments
 
-| Feature     | Configure flag         | Description
-| :---------- | :--------------------- | :-----
-| Scrypt SSE2 | `--enable-scrypt-sse2` | SSE2 asm for Scrypt functions
-| SHA ARMv8   | `--with-armv8-crypto`  | SHA1/256 intrinsics for ARMv8-crypto capable processors
-| SHA ARMv82  | `--with-armv82-crypto` | SHA512 intrinsics for ARMv8.2-crypto capable processors
-| SHA AVX2    | `--with-intel-avx2`    | SHA1/256/512 intrinsics using Intel AVX2 extensions, depends on intel-ipsec-mb
+| Feature     | Configure flag         | Description                                                                    |
+|:------------|:-----------------------|:-------------------------------------------------------------------------------|
+| Scrypt SSE2 | `--enable-scrypt-sse2` | SSE2 asm for Scrypt functions                                                  |
+| SHA ARMv8   | `--with-armv8-crypto`  | SHA1/256 intrinsics for ARMv8-crypto capable processors                        |
+| SHA ARMv82  | `--with-armv82-crypto` | SHA512 intrinsics for ARMv8.2-crypto capable processors                        |
+| SHA AVX2    | `--with-intel-avx2`    | SHA1/256/512 intrinsics using Intel AVX2 extensions, depends on intel-ipsec-mb |
 
 ## Requirements
 
 1. An experimental feature shall be controlled by a configuration flag inside
    `configure.ac` that explicitly enables the feature.
 2. The feature shall by default be disabled.
-3. The feature shall call the `DOGECOIN_REQUIRE_EXPERIMENTAL` macro in
+3. The feature shall call the `DEDCOIN_REQUIRE_EXPERIMENTAL` macro in
    `configure.ac`, to enforce that `--enable-experimental` was passed.
 4. All code blocks related to the feature shall be guarded by a preprocessor
    check on the configuration flag, to prevent leaking code into releases.
 5. Inside each experimental code block, a call shall be made to the
-   `DOGECOIN_REQUIRE_EXPERIMENTAL` macro from `support/experimental.h`, to
+   `DEDCOIN_REQUIRE_EXPERIMENTAL` macro from `support/experimental.h`, to
    clearly mark the code as experimental and ease review and troubleshooting.
 6. Only when an experimental feature matures into production shall the above
    requirements be voided.

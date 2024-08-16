@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
+// Copyright (c) 2009-2010 Sa_toshikamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2016 Daniel Kraft
 // Distributed under the MIT/X11 software license, see the accompanying
@@ -36,7 +36,7 @@ private:
 public:
     CTransactionRef tx;
     uint256 hashBlock;
-    // Dogecoin TODO: Is this used? If not remove. If it is, I don't think it's actually set
+    // Dedcoin TODO: Is this used? If not remove. If it is, I don't think it's actually set
     // anywhere. Check with Namecore
     std::vector<uint256> vMerkleBranch;
 

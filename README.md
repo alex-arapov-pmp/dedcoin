@@ -1,12 +1,12 @@
 <h1 align="center">
 <img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="dedcoin" width="300"/>
 <br/><br/>
-dedcoin Core [DOGE, Ð]  
+dedcoin Core [DEDC, Ð]  
 </h1>
 
 <div align="center">
 
-[![dedcoinBadge](https://img.shields.io/badge/Doge-Coin-yellow.svg)](https://dedcoin.com)
+[![dedcoinBadge](https://img.shields.io/badge/DEDC-Coin-yellow.svg)](https://dedcoin.com)
 [![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://dedcoin.com)
 
 </div>
@@ -17,9 +17,9 @@ before compiling production binaries.**
 
 For internationalized documentation, see the index at [doc/intl](doc/intl/README.md).
 
-dedcoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The dedcoin Core software allows anyone to operate a node in the dedcoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
+Dedcoin is a community-driven cryptocurrency that was copied from Dogecoin. The Dedcoin Core software allows anyone to operate a node in the Dedcoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Dogecoin Core and other cryptocurrencies.
 
-For information about the default fees used on the dedcoin network, please
+For information about the default fees used on the Dedcoin network, please
 refer to the [fee recommendation](doc/fee-recommendation.md).
 
 **Website:** [dedcoin.com](https://dedcoin.com)
@@ -55,7 +55,7 @@ Main development resources:
   follow planned and in-progress work for upcoming releases.
 * [GitHub Discussion](https://github.com/dedcoin/dedcoin/discussions) is used
   to discuss features, planned and unplanned, related to both the development of
-  the dedcoin Core software, the underlying protocols and the DOGE asset.  
+  the dedcoin Core software, the underlying protocols and the DEDC asset.  
 * [dedcoindev subreddit](https://www.reddit.com/r/dedcoindev/)
 
 ### Version strategy
@@ -96,7 +96,7 @@ about dedcoin, give or ask for help, to share your project.
 Here are some places to visit:
 
 * [dedcoin subreddit](https://www.reddit.com/r/dedcoin/)
-* [Dogeducation subreddit](https://www.reddit.com/r/dogeducation/)
+* [Dedducation subreddit](https://www.reddit.com/r/dedducation/)
 * [Discord](https://discord.gg/dedcoin)
 * [dedcoin Twitter](https://twitter.com/dedcoin)
 

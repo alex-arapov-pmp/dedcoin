@@ -107,8 +107,8 @@ def rpc_port(n):
 def check_json_precision():
     """Make sure json library being used does not lose precision converting BTC values"""
     n = Decimal("20000000.00000003")
-    satoshis = int(json.loads(json.dumps(float(n)))*1.0e8)
-    if satoshis != 2000000000000003:
+    farthings = int(json.loads(json.dumps(float(n)))*1.0e8)
+    if farthings != 2000000000000003:
         raise RuntimeError("JSON encode/decode loses precision")
 
 def count_bytes(hex_string):
@@ -512,10 +512,10 @@ def assert_fee_amount(fee, tx_size, fee_per_kB):
     """Assert the fee was in range"""
     target_fee = tx_size * fee_per_kB / 1000
     if fee < target_fee:
-        raise AssertionError("Fee of %s DOGE too low! (Should be %s DOGE)"%(str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s DEDC too low! (Should be %s DEDC)"%(str(fee), str(target_fee)))
     # allow the wallet's estimation to be at most 2 bytes off
     if fee > (tx_size + 2) * fee_per_kB / 1000:
-        raise AssertionError("Fee of %s DOGE too high! (Should be %s DOGE)"%(str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s DEDC too high! (Should be %s DEDC)"%(str(fee), str(target_fee)))
 
 def assert_equal(thing1, thing2, *args):
     if thing1 != thing2 or any(thing1 != arg for arg in args):
@@ -618,7 +618,7 @@ def assert_array_result(object_array, to_match, expected, should_not_find = Fals
     if num_matched > 0 and should_not_find == True:
         raise AssertionError("Objects were found %s"%(str(to_match)))
 
-def satoshi_round(amount):
+def farthing_round(amount):
     return Decimal(amount).quantize(Decimal('0.00000001'), rounding=ROUND_DOWN)
 
 # Helper to create at least "count" utxos
@@ -637,8 +637,8 @@ def create_confirmed_utxos(fee, node, count):
         inputs.append({ "txid" : t["txid"], "vout" : t["vout"]})
         outputs = {}
         send_value = t['amount'] - fee
-        outputs[addr1] = satoshi_round(send_value/2)
-        outputs[addr2] = satoshi_round(send_value/2)
+        outputs[addr1] = farthing_round(send_value/2)
+        outputs[addr2] = farthing_round(send_value/2)
         raw_tx = node.createrawtransaction(inputs, outputs)
         signed_tx = node.signrawtransaction(raw_tx)["hex"]
         txid = node.sendrawtransaction(signed_tx)
@@ -688,7 +688,7 @@ def create_lots_of_big_transactions(node, txouts, utxos, num, fee):
         inputs=[{ "txid" : t["txid"], "vout" : t["vout"]}]
         outputs = {}
         change = t['amount'] - fee
-        outputs[addr] = satoshi_round(change)
+        outputs[addr] = farthing_round(change)
         rawtx = node.createrawtransaction(inputs, outputs)
         newtx = rawtx[0:92]
         newtx = newtx + txouts

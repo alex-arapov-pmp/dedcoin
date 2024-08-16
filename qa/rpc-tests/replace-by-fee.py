@@ -27,13 +27,13 @@ def make_utxo(node, amount, confirmed=True, scriptPubKey=CScript([1])):
                 unconfirmed otherwise.
     """
     fee = 1*COIN
-    while node.getbalance() < satoshi_round((amount + fee)/COIN):
+    while node.getbalance() < farthing_round((amount + fee)/COIN):
         node.generate(100)
         #print (node.getbalance(), amount, fee)
 
     new_addr = node.getnewaddress()
     #print new_addr
-    txid = node.sendtoaddress(new_addr, satoshi_round((amount+fee)/COIN))
+    txid = node.sendtoaddress(new_addr, farthing_round((amount+fee)/COIN))
     tx1 = node.getrawtransaction(txid, 1)
     txid = int(txid, 16)
     i = None
@@ -140,7 +140,7 @@ class ReplaceByFeeTest(BitcoinTestFramework):
         else:
             assert(False)
 
-        # Extra 5 DOGE fee
+        # Extra 5 DEDC fee
         tx1b = CTransaction()
         tx1b.vin = [CTxIn(tx0_outpoint, nSequence=0)]
         tx1b.vout = [CTxOut(int(6*COIN), CScript([b'b']))]
@@ -174,7 +174,7 @@ class ReplaceByFeeTest(BitcoinTestFramework):
             prevout = COutPoint(int(txid, 16), 0)
 
         # Whether the double-spend is allowed is evaluated by including all
-        # child fees - 400 DOGE - so this attempt is rejected.
+        # child fees - 400 DEDC - so this attempt is rejected.
         dbl_tx = CTransaction()
         dbl_tx.vin = [CTxIn(tx0_outpoint, nSequence=0)]
         dbl_tx.vout = [CTxOut(initial_nValue - 300*COIN, CScript([1]))]
@@ -252,7 +252,7 @@ class ReplaceByFeeTest(BitcoinTestFramework):
         else:
             assert(False)
 
-        # 1000 DOGE fee is enough
+        # 1000 DEDC fee is enough
         dbl_tx = CTransaction()
         dbl_tx.vin = [CTxIn(tx0_outpoint, nSequence=0)]
         dbl_tx.vout = [CTxOut(initial_nValue - fee*n - 1000*COIN, CScript([1]))]

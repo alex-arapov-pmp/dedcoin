@@ -7,7 +7,7 @@ title: '[feat] '
 <!-- Please make sure you are posting an technical issue related to dedcoin Core. --> 
 
 <!-- For general questions about dedcoin or wallet recovery please use one of the various communities:
-* [Dogeducation on reddit](https://www.reddit.com/r/dogeducation/)
+* [Dedducation on reddit](https://www.reddit.com/r/dedducation/)
 * [Discord](https://discord.com/invite/dedcoin) -->
 
 <!-- ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION. -->

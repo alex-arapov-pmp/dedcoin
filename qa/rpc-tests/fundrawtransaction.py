@@ -513,7 +513,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         self.nodes[0].generate(1)
         self.sync_all()
 
-        #fund a tx with ~20 small inputs, by spending in combination the 22 DOGE we just sent
+        #fund a tx with ~20 small inputs, by spending in combination the 22 DEDC we just sent
         inputs = []
         outputs = {self.nodes[0].getnewaddress():16.0,self.nodes[0].getnewaddress():5.9}
         rawTx = self.nodes[1].createrawtransaction(inputs, outputs)
@@ -730,7 +730,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         # outputs 2 and 3 take the same share of the fee
         assert_equal(share[2], share[3])
 
-        # output 0 takes at least as much share of the fee, and no more than 2 satoshis more, than outputs 2 and 3
+        # output 0 takes at least as much share of the fee, and no more than 2 farthings more, than outputs 2 and 3
         assert_greater_than_or_equal(share[0], share[2])
         assert_greater_than_or_equal(share[2] + Decimal(2e-8), share[0])
 

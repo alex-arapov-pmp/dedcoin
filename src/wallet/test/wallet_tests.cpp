@@ -1,5 +1,5 @@
 // Copyright (c) 2012-2016 The Bitcoin Core developers
-// Copyright (c) 2022 The Dogecoin Core developers
+// Copyright (c) 2022 The Dedcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -278,15 +278,15 @@ BOOST_AUTO_TEST_CASE(coin_selection_tests)
         BOOST_CHECK_EQUAL(setCoinsRet.size(), 2U);
 
         // test with many inputs
-        for (CAmount amt=15*CENT; amt < 10000 * COIN; amt*=10) {
+        for (CAmount amt=15*CYCLE; amt < 10000 * COIN; amt*=10) {
              empty_wallet();
              // Create 676 inputs (=  (old MAX_STANDARD_TX_SIZE == 100000)  / 148 bytes per input)
              for (uint16_t j = 0; j < 676; j++)
                  add_coin(amt);
-             BOOST_CHECK(wallet.SelectCoinsMinConf(20*CENT, 1, 1, 0, vCoins, setCoinsRet, nValueRet));
-             if (amt - 20*CENT < CWallet::GetMinChange()) {
+             BOOST_CHECK(wallet.SelectCoinsMinConf(20*CYCLE, 1, 1, 0, vCoins, setCoinsRet, nValueRet));
+             if (amt - 20*CYCLE < CWallet::GetMinChange()) {
                  // needs more than one input:
-                 uint16_t returnSize = std::ceil((20.0 * CENT + CWallet::GetMinChange())/amt);
+                 uint16_t returnSize = std::ceil((20.0 * CYCLE + CWallet::GetMinChange())/amt);
                  CAmount returnValue = amt * returnSize;
                  BOOST_CHECK_EQUAL(nValueRet, returnValue);
                  BOOST_CHECK_EQUAL(setCoinsRet.size(), returnSize);
@@ -496,7 +496,7 @@ BOOST_FIXTURE_TEST_CASE(importwallet_rescan, TestChain240Setup)
 
 BOOST_AUTO_TEST_CASE(GetMinimumFee_test)
 {
-    uint64_t value = 1000 * COIN; // 1,000 DOGE
+    uint64_t value = 1000 * COIN; // 1,000 DEDC
 
     CMutableTransaction tx;
     CTxMemPool pool(payTxFee);
