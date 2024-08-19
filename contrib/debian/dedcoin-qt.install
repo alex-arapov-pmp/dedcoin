@@ -1,0 +1,6 @@
+usr/local/bin/dedcoin-qt usr/bin
+share/pixmaps/dedcoin32.xpm usr/share/pixmaps
+share/pixmaps/dedcoin16.xpm usr/share/pixmaps
+share/pixmaps/dedcoin128.png usr/share/pixmaps
+debian/dedcoin-qt.desktop usr/share/applications
+debian/dedcoin-qt.protocol usr/share/kde4/services/

@@ -44,15 +44,15 @@ static void CoinSelection(benchmark::State& state)
         vCoins.clear();
 
         // Add coins.
-        for (int i = 0; i < 1000; i++)
-            addCoin(1000 * COIN, wallet, vCoins);
+        for (int i = 0; i < 1024; i++)
+            addCoin(1024 * COIN, wallet, vCoins);
         addCoin(3 * COIN, wallet, vCoins);
 
         std::set<std::pair<const CWalletTx*, unsigned int> > setCoinsRet;
         CAmount nValueRet;
-        bool success = wallet.SelectCoinsMinConf(1003 * COIN, 1, 6, 0, vCoins, setCoinsRet, nValueRet);
+        bool success = wallet.SelectCoinsMinConf(1027 * COIN, 1, 6, 0, vCoins, setCoinsRet, nValueRet);
         assert(success);
-        assert(nValueRet == 1003 * COIN);
+        assert(nValueRet == 1027 * COIN);
         assert(setCoinsRet.size() == 2);
     }
 }

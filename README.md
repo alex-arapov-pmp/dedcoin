@@ -1,7 +1,7 @@
 <h1 align="center">
 <img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="dedcoin" width="300"/>
 <br/><br/>
-dedcoin Core [DEDC, Ð]  
+Dedcoin Core [DEDC, Ð]  
 </h1>
 
 <div align="center">
@@ -11,9 +11,7 @@ dedcoin Core [DEDC, Ð]
 
 </div>
 
-**IMPORTANT: Starting August 2024, the `master` branch has become the primary
-integration branch and has become unstable. Please check out a tagged version
-before compiling production binaries.**
+**IMPORTANT: I don't know what I am doing, pleas use at your own peril**
 
 For internationalized documentation, see the index at [doc/intl](doc/intl/README.md).
 
@@ -26,13 +24,13 @@ refer to the [fee recommendation](doc/fee-recommendation.md).
 
 ## Usage 💻
 
-To start your journey with dedcoin Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
+To start your journey with Dedcoin Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
-The JSON-RPC API provided by dedcoin Core is self-documenting and can be browsed with `dedcoin-cli help`, while detailed information for each command can be viewed with `dedcoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
+The JSON-RPC API provided by Dedcoin Core is self-documenting and can be browsed with `dedcoin-cli help`, while detailed information for each command can be viewed with `dedcoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
 
 ### Such ports
 
-dedcoin Core by default uses port `22556` for peer-to-peer communication that
+Dedcoin Core by default uses port `22556` for peer-to-peer communication that
 is needed to synchronize the "mainnet" blockchain and stay informed of new
 transactions and blocks. Additionally, a JSONRPC port can be opened, which
 defaults to port `22555` for mainnet nodes. It is strongly recommended to not
@@ -45,7 +43,7 @@ expose RPC ports to the public internet.
 
 ## Ongoing development - Moon plan 🌒
 
-dedcoin Core is an open source and community driven software. The development
+Dedcoin Core is an open source and community driven software. The development
 process is open and publicly visible; anyone can see, discuss and work on the
 software.
 
@@ -95,10 +93,10 @@ about dedcoin, give or ask for help, to share your project.
 
 Here are some places to visit:
 
-* [dedcoin subreddit](https://www.reddit.com/r/dedcoin/)
-* [Dedducation subreddit](https://www.reddit.com/r/dedducation/)
-* [Discord](https://discord.gg/dedcoin)
-* [dedcoin Twitter](https://twitter.com/dedcoin)
+* [dedcoin subreddit](https://www.reddit.com/r/dedcoin/) - not a real place
+* [Dedducation subreddit](https://www.reddit.com/r/dedducation/) - not a real place
+* [Discord](https://discord.gg/dedcoin) - not a real place
+* [dedcoin Twitter](https://twitter.com/dedcoin) - not a real place, will never become one, screw that cesspool
 
 ## Very Much Frequently Asked Questions ❓
 
@@ -108,6 +106,6 @@ Do you have a question regarding dedcoin? An answer is perhaps already in the
 of the discussion board!
 
 ## License - Much license ⚖️
-dedcoin Core is released under the terms of the MIT license. See
+Dedcoin Core is released under the terms of the MIT license. See
 [COPYING](COPYING) for more information or see
 [opensource.org](https://opensource.org/licenses/MIT)

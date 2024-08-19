@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=dedcoin Core
+Comment=Connect to the dedcoin P2P Network
+Comment[de]=Verbinde mit dem dedcoin peer-to-peer Netzwerk
+Comment[fr]=dedcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=dedcoin, eşten eşe kriptografik sanal para birimi
+Exec=dedcoin-qt %u
+Terminal=false
+Type=Application
+Icon=dedcoin128
+MimeType=x-scheme-handler/dedcoin;
+Categories=Office;Finance;

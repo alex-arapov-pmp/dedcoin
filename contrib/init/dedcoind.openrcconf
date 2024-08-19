@@ -1,0 +1,33 @@
+# /etc/conf.d/dedcoind: config file for /etc/init.d/dedcoind
+
+# Config file location
+#dedcoinD_CONFIGFILE="/etc/dedcoin/dedcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $dedcoinD_USER)
+#dedcoinD_PIDDIR="/var/run/dedcoind"
+
+# What filename to give the pidfile
+#dedcoinD_PIDFILE="${dedcoinD_PIDDIR}/dedcoind.pid"
+
+# Where to write dedcoind data (be mindful that the blockchain is large)
+#dedcoinD_DATADIR="/var/lib/dedcoind"
+
+# User and group to own dedcoind process
+#dedcoinD_USER="dedcoin"
+#dedcoinD_GROUP="dedcoin"
+
+# Path to dedcoind executable
+#dedcoinD_BIN="/usr/bin/dedcoind"
+
+# Nice value to run dedcoind under
+#dedcoinD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+dedcoinD_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for dedcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+dedcoinD_SIGTERM_TIMEOUT=60
