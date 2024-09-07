@@ -1,8 +1,8 @@
-# Installing dedcoin Core
+# Installing Dedcoin Core
 
 ### Pre-compiled binaries
 
-The easiest way to install the latest version of the dedcoin Core software is
+The easiest way to install the latest version of the Dedcoin Core software is
 by to download the latest precompiled binaries for your platform from the
 [release page](https://github.com/dedcoin/dedcoin/releases). Currently,
 binaries are released for the following platforms:
@@ -33,12 +33,12 @@ binaries:
 | CentOS (x86)      | 7                    |
 | Fedora (x86)      | 28                   |
 
-It is possible to run dedcoin Core on other systems and lower versions when
+It is possible to run Dedcoin Core on other systems and lower versions when
 compiling from source, see the chapters below for more information.
 
 ### Compiling using packaged dependencies
 
-It is possible to build your own copy of dedcoin Core with the exact, tested,
+It is possible to build your own copy of Dedcoin Core with the exact, tested,
 dependencies, as used for the binary releases, by using the
 [depends system](depends/description.md). Please refer to the
 [depends README](depends/README.md) for instructions to build dedcoin using
@@ -49,7 +49,7 @@ these dependencies.
   The following are developer notes on how to build dedcoin on your native
   platform, using the dependencies as provided by your system's package manager.
   Before starting, ensure your system is updated and has the latest security patches.
-  Outdated libraries can render the entire system, including dedcoin Core, vulnerable.
+  Outdated libraries can render the entire system, including Dedcoin Core, vulnerable.
   They are not complete guides, but include notes on the necessary libraries,
   compile flags, etc.
 
@@ -95,7 +95,7 @@ that run in `-regtest` mode.
 
 **DEBUG_LOCKORDER**
 
-dedcoin Core is a multithreaded application, and deadlocks or other multithreading bugs
+Dedcoin Core is a multithreaded application, and deadlocks or other multithreading bugs
 can be very difficult to track down. Compiling with `-DDEBUG_LOCKORDER` (`configure
 CXXFLAGS="-DDEBUG_LOCKORDER -g"`) inserts run-time checks to keep track of which locks
 are held, and adds warnings to the debug.log file if inconsistencies are detected.
