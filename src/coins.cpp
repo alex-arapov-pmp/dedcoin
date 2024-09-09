@@ -262,10 +262,27 @@ unsigned int CCoinsViewCache::GetCacheSize() const {
     return cacheCoins.size();
 }
 
+//Original script:
+// const CTxOut &CCoinsViewCache::GetOutputFor(const CTxIn& input) const
+//{
+//    const CCoins* coins = AccessCoins(input.prevout.hash);
+//    assert(coins && coins->IsAvailable(input.prevout.n));
+//    return coins->vout[input.prevout.n];
+//}
+// below adjusted as per ChatGPT (Alex):
+
 const CTxOut &CCoinsViewCache::GetOutputFor(const CTxIn& input) const
 {
     const CCoins* coins = AccessCoins(input.prevout.hash);
-    assert(coins && coins->IsAvailable(input.prevout.n));
+    if (!coins->IsAvailable(input.prevout.n)) {
+        throw std::runtime_error("The requested output is not available.");
+    }
+    if (!coins) {
+        throw std::runtime_error("Coins for the given input not found.");
+    }
+    if (input.prevout.n >= coins->vout.size()) {
+        throw std::runtime_error("Invalid output index in vout.");
+    }
     return coins->vout[input.prevout.n];
 }
 
