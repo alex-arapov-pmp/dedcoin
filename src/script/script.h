@@ -642,8 +642,8 @@ public:
         // The default std::vector::clear() does not release memory.
         //CScriptBase().swap(*this);
         //Below as directed by ChatGPT (Alex):
-        std::vector<unsigned char>::clear();  // Clear the contents
-        std::vector<unsigned char>::shrink_to_fit();  // Release the memory
+        this->std::vector<unsigned char>::clear();  // Clear the contents
+        this->std::vector<unsigned char>::shrink_to_fit();  // Release the memory
     }
 };
 
