@@ -31,10 +31,8 @@
  *  The data type T must be movable by memmove/realloc(). Once we switch to C++,
  *  move constructors can be used instead.
  */
-// original template: template<unsigned int N, typename T, typename Size = uint32_t, typename Diff = int32_t>
-//Template adjusted as directed by ChatGPT (Alex):
 
-template<std::size_t N, typename T, typename Size = std::size_t, typename Diff = std::ptrdiff_t>
+template<unsigned int N, typename T, typename Size = uint32_t, typename Diff = int32_t>
 class prevector {
 public:
     typedef Size size_type;
