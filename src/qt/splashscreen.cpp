@@ -81,7 +81,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
 
     // check font size and drawing with
     pixPaint.setFont(QFont(font, 33*fontFactor));
-    QFontMetricsF fm = pixPaint.fontMetrics();
+    QFontMetrics fm = pixPaint.fontMetrics();
     int titleTextWidth = fm.horizontalAdvance(titleText);
     if (titleTextWidth > 176) {
         fontFactor = fontFactor * 176 / titleTextWidth;
