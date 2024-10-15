@@ -642,8 +642,8 @@ public:
         // The default std::vector::clear() does not release memory.
         //CScriptBase().swap(*this);
         //Below as directed by ChatGPT (Alex):
-        CScriptBase empty;
-        swap(empty);  // Swap with an empty instance, forcing the internal vector to release its memory
+        CScriptBase empty{};
+        empty.swap(*this);  // Swap with an empty instance, forcing the internal vector to release its memory
     }
 };
 
